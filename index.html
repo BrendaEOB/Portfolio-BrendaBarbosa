@@ -227,6 +227,7 @@
 
     <div class="projetosArea">
 
+        <!-- projeto 1 -->
         <div class="projetoCard reveal">
             <div class="topoProjeto roxo">
                 <span></span>
@@ -241,21 +242,26 @@
                 </iframe>
             </div>
 
-            <h3>Landing Page Brenda</h3>
+            <div class="conteudoProjeto">
+                <h3>Landing Page Brenda</h3>
 
-            <p>
-                Landing page desenvolvida como projeto escolar
-                utilizando HTML e CSS.
-            </p>
+                <p>
+                    Landing page desenvolvida como projeto escolar
+                    utilizando HTML e CSS.
+                </p>
 
-            <a
-                href="https://brendaeob.github.io/Landing-Page-Brenda/"
-                target="_blank"
-                class="botaoProjeto">
-                Ver projeto
-            </a>
+                <div class="acoesProjeto">
+                    <a
+                        href="https://brendaeob.github.io/Landing-Page-Brenda/"
+                        target="_blank"
+                        class="botaoProjeto">
+                        Ver projeto
+                    </a>
+                </div>
+            </div>
         </div>
 
+        <!-- projeto 2 -->
         <div class="projetoCard reveal">
             <div class="topoProjeto rosaTopo">
                 <span></span>
@@ -267,19 +273,27 @@
                 <span>Formulários • Máscaras</span>
             </div>
 
-            <h3>Formulário com JavaScript</h3>
+            <div class="conteudoProjeto">
+                <h3>Formulário com JavaScript</h3>
 
-            <p>
-                Projeto com HTML, CSS e JavaScript para praticar
-                formulários e máscaras de telefone, moeda, CEP,
-                CPF e CNPJ.
-            </p>
+                <p>
+                    Projeto com HTML, CSS e JavaScript para praticar
+                    formulários e máscaras de telefone, moeda, CEP,
+                    CPF e CNPJ.
+                </p>
 
-            <a href="FormsJs.zip" download class="botaoProjeto">
-                Baixar projeto
-            </a>
+                <div class="acoesProjeto">
+                    <a
+                        href="FormsJs.zip"
+                        download
+                        class="botaoProjeto">
+                        Baixar projeto
+                    </a>
+                </div>
+            </div>
         </div>
 
+        <!-- projeto 3 -->
         <div class="projetoCard reveal">
             <div class="topoProjeto amareloTopo">
                 <span></span>
@@ -291,25 +305,41 @@
                 <span>MySQL • Banco de Dados</span>
             </div>
 
-            <h3>Sistema Empresarial - MySQL</h3>
+            <div class="conteudoProjeto">
+                <h3>Sistema Empresarial - MySQL</h3>
 
-            <p>
-                Banco de dados com funcionários, departamentos,
-                projetos, alocações e consultas com INNER JOIN.
-            </p>
+                <p>
+                    Banco de dados com funcionários, departamentos,
+                    projetos, alocações e consultas com INNER JOIN.
+                </p>
 
-            <a href="empresa_sys.sql" download class="botaoProjeto">
-                Baixar projeto
-            </a>
+                <div class="acoesProjeto">
+                    <button
+                        id="abrirModal"
+                        class="botaoProjeto"
+                        type="button">
+                        Ver detalhes
+                    </button>
+
+                    <a
+                        href="empresa_sys.sql"
+                        download
+                        class="botaoProjeto">
+                        Baixar projeto
+                    </a>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <div class="githubProjetos reveal">
         <p>Veja também meus projetos no GitHub.</p>
 
-        <a href="https://github.com/BrendaEOB"
-           target="_blank"
-           class="botaoRoxo">
+        <a
+            href="https://github.com/BrendaEOB"
+            target="_blank"
+            class="botaoRoxo">
             Acessar GitHub
         </a>
     </div>
@@ -410,13 +440,15 @@
                 required></textarea>
         </div>
 
-        <input type="hidden"
-               name="_subject"
-               value="Nova mensagem pelo portfólio">
+        <input
+            type="hidden"
+            name="_subject"
+            value="Nova mensagem pelo portfólio">
 
-        <input type="hidden"
-               name="_captcha"
-               value="false">
+        <input
+            type="hidden"
+            name="_captcha"
+            value="false">
 
         <button type="submit" class="botaoEnviar">
             Enviar mensagem
@@ -440,8 +472,9 @@
 
         <div class="contatoCard">
             <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/brenda-barbosa-a2706b409/"
-               target="_blank">
+            <a
+                href="https://www.linkedin.com/in/brenda-barbosa-a2706b409/"
+                target="_blank">
                 Brenda Barbosa
             </a>
         </div>
@@ -455,16 +488,58 @@
 
 </main>
 
+<!-- modal -->
+<div id="modalProjeto" class="modal">
+    <div class="modalConteudo">
+        <button id="fecharModalX" class="fecharModal" type="button">×</button>
+
+        <div class="iconeModal">SQL</div>
+
+        <h2>Sistema Empresarial</h2>
+
+        <p>
+            Projeto de banco de dados desenvolvido em MySQL para
+            organizar informações de uma empresa.
+        </p>
+
+        <div class="modalTecnologias">
+            <span>MySQL</span>
+            <span>SQL</span>
+            <span>INNER JOIN</span>
+        </div>
+
+        <p>
+            O sistema trabalha com funcionários, departamentos,
+            projetos e alocações, além de consultas relacionando
+            as informações armazenadas.
+        </p>
+
+        <div class="acoesModal">
+            <a href="empresa_sys.sql" download class="botaoRoxo">
+                Baixar SQL
+            </a>
+
+            <button id="fecharModalBotao" class="botaoClaro" type="button">
+                Fechar
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- footer -->
 <footer>
     <p>© 2026 Brenda Barbosa. Todos os direitos reservados.</p>
 
     <p>
         GitHub:
-        <a href="https://github.com/BrendaEOB" target="_blank">BrendaEOB</a>
+        <a href="https://github.com/BrendaEOB" target="_blank">
+            BrendaEOB
+        </a>
         |
         LinkedIn:
-        <a href="https://www.linkedin.com/in/brenda-barbosa-a2706b409/" target="_blank">
+        <a
+            href="https://www.linkedin.com/in/brenda-barbosa-a2706b409/"
+            target="_blank">
             Brenda Barbosa
         </a>
         |

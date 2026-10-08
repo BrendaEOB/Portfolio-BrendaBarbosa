@@ -127,3 +127,43 @@ telefone.oninput = function() {
 
     telefone.value = valor;
 };
+
+// modal
+var modalProjeto = document.getElementById("modalProjeto");
+var abrirModal = document.getElementById("abrirModal");
+var fecharModalX = document.getElementById("fecharModalX");
+var fecharModalBotao = document.getElementById("fecharModalBotao");
+
+function mostrarModal() {
+    modalProjeto.classList.add("aberto");
+    document.body.style.overflow = "hidden";
+}
+
+function esconderModal() {
+    modalProjeto.classList.remove("aberto");
+    document.body.style.overflow = "";
+}
+
+abrirModal.onclick = function() {
+    mostrarModal();
+};
+
+fecharModalX.onclick = function() {
+    esconderModal();
+};
+
+fecharModalBotao.onclick = function() {
+    esconderModal();
+};
+
+modalProjeto.onclick = function(evento) {
+    if (evento.target == modalProjeto) {
+        esconderModal();
+    }
+};
+
+document.onkeydown = function(evento) {
+    if (evento.key == "Escape") {
+        esconderModal();
+    }
+};

@@ -157,7 +157,6 @@ nav a:hover {
 }
 
 .inicio h1 span {
-    font-family: "DM Serif Display", serif;
     color: #ef78a5;
 }
 
@@ -192,6 +191,7 @@ nav a:hover {
     border-radius: 8px;
     padding: 13px 23px;
     text-decoration: none;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
     cursor: pointer;
     margin-right: 10px;
@@ -211,7 +211,9 @@ nav a:hover {
     border-radius: 8px;
     padding: 12px 22px;
     text-decoration: none;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -516,6 +518,7 @@ nav a:hover {
 .projetosArea {
     display: flex;
     gap: 35px;
+    align-items: stretch;
 }
 
 .projetoCard {
@@ -524,7 +527,8 @@ nav a:hover {
     border: 1px solid #dcd7ea;
     border-radius: 15px;
     overflow: hidden;
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .topoProjeto {
@@ -610,43 +614,67 @@ nav a:hover {
     font-size: 9px;
 }
 
-.projetoCard h3 {
-    margin: 0 22px 8px;
+.conteudoProjeto {
+    padding: 0 22px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.conteudoProjeto h3 {
+    margin-bottom: 8px;
     font-size: 14px;
 }
 
-.projetoCard p {
-    margin: 0 22px 15px;
+.conteudoProjeto p {
     color: #696476;
     font-size: 11px;
-    min-height: 42px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex: 1;
 }
 
-.projetoCard .botaoProjeto {
-    display: inline-block;
-    margin-left: 22px;
+.acoesProjeto {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.botaoProjeto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
     background-color: #8b5de1;
     color: white;
     border: 1px solid #8b5de1;
     padding: 8px 15px;
     border-radius: 6px;
+    font-family: "Poppins", sans-serif;
     font-size: 11px;
     text-decoration: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.projetoCard .botaoProjeto:hover {
+.botaoProjeto:hover {
     background-color: white;
     color: #8b5de1;
 }
 
 .githubProjetos {
-    margin-top: 25px;
+    margin-top: 30px;
+    text-align: center;
 }
 
 .githubProjetos p {
     margin-bottom: 12px;
     font-size: 12px;
+}
+
+.githubProjetos .botaoRoxo {
+    margin-right: 0;
 }
 
 /* cursos */
@@ -794,6 +822,117 @@ nav a:hover {
     color: #d5951e !important;
 }
 
+/* modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 16, 28, 0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modalConteudo {
+    width: 100%;
+    max-width: 480px;
+    background-color: white;
+    border: 1px solid #d9ceee;
+    border-radius: 18px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    animation: aparecerModal 0.3s;
+}
+
+.fecharModal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f2edfc;
+    color: #6745bf;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fecharModal:hover {
+    background-color: #8d5be8;
+    color: white;
+}
+
+.iconeModal {
+    width: 55px;
+    height: 55px;
+    background-color: #fff4d7;
+    color: #a47716;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.modalConteudo h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 27px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.modalConteudo p {
+    color: #696476;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.modalTecnologias {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.modalTecnologias span {
+    background-color: #eee8ff;
+    color: #6745bf;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.acoesModal {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* footer */
 footer {
     border-top: 1px solid #ece8f2;
@@ -931,7 +1070,7 @@ body.escuro .ferramenta:hover {
     border-color: #ef78a5;
 }
 
-body.escuro .projetoCard p {
+body.escuro .conteudoProjeto p {
     color: #d5d5d5;
 }
 
@@ -975,6 +1114,35 @@ body.escuro .contatoCard a {
 
 body.escuro .contatoCard a:hover {
     color: #ef78a5;
+}
+
+/* modal escuro */
+body.escuro .modalConteudo {
+    background-color: #29262f;
+    border-color: #50495c;
+}
+
+body.escuro .modalConteudo h2 {
+    color: white;
+}
+
+body.escuro .modalConteudo p {
+    color: #d6d1dc;
+}
+
+body.escuro .modalTecnologias span {
+    background-color: #41374f;
+    color: #d8c5ff;
+}
+
+body.escuro .fecharModal {
+    background-color: #41394b;
+    color: #e0d2ff;
+}
+
+body.escuro .fecharModal:hover {
+    background-color: #7a2f55;
+    color: white;
 }
 
 body.escuro footer {
@@ -1096,17 +1264,24 @@ body.escuro footer {
     }
 
     .habilidadesArea,
-    .projetosArea,
     .listaCursos,
     .contatosLista {
         display: block;
     }
 
     .habilidadeCard,
-    .projetoCard,
     .curso,
     .contatoCard {
         margin-bottom: 10px;
+    }
+
+    /* projetos mobile */
+    .projetosArea {
+        display: block;
+    }
+
+    .projetoCard {
+        margin-bottom: 15px;
     }
 
     .preview {
@@ -1114,10 +1289,22 @@ body.escuro footer {
         height: 60px;
     }
 
-    .projetoCard h3,
-    .projetoCard p,
-    .projetoCard .botaoProjeto {
-        margin-left: 12px;
+    .conteudoProjeto {
+        padding: 0 12px 15px;
+    }
+
+    .acoesProjeto {
+        gap: 6px;
+    }
+
+    .botaoProjeto {
+        font-size: 9px;
+        padding: 7px 11px;
+    }
+
+    .githubProjetos {
+        margin-top: 20px;
+        text-align: center;
     }
 
     .formulario {
@@ -1128,6 +1315,19 @@ body.escuro footer {
     .campo {
         width: 100%;
         margin-bottom: 12px;
+    }
+
+    .modalConteudo {
+        padding: 25px 20px;
+    }
+
+    .modalConteudo h2 {
+        font-size: 23px;
+    }
+
+    .acoesModal {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     footer {
